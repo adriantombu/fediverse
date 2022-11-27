@@ -17,9 +17,9 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let acc = Height::new(42);
+        let height = Height::new(42);
 
-        assert!(acc.is_ok());
-        assert_eq!(acc.unwrap(), Height(42));
+        assert!(height.is_ok());
+        assert_eq!(height.unwrap(), Height(42));
     }
 }

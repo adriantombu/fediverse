@@ -17,9 +17,9 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let acc = Width::new(42);
+        let width = Width::new(42);
 
-        assert!(acc.is_ok());
-        assert_eq!(acc.unwrap(), Width(42));
+        assert!(width.is_ok());
+        assert_eq!(width.unwrap(), Width(42));
     }
 }

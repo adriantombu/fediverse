@@ -7,4 +7,7 @@ pub enum TypeError {
 
     #[error("Value out of bound (expected maximum of {max:?}, found {found:?})")]
     OutOfBoundsMax { max: String, found: String },
+
+    #[error("Unable to parse string as url")]
+    UrlParse(#[from] url::ParseError),
 }
