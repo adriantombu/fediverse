@@ -9,7 +9,7 @@ pub const LATITUDE_MAX_BOUND: f32 = 90.0;
 pub struct Latitude(f32);
 
 impl Latitude {
-    fn new(value: f32) -> Result<Self, TypeError> {
+    pub fn new(value: f32) -> Result<Self, TypeError> {
         if value < LATITUDE_MIN_BOUND {
             return Err(TypeError::OutOfBoundsMin {
                 min: LATITUDE_MIN_BOUND.to_string(),

@@ -16,7 +16,7 @@ pub enum Unit {
 pub struct Units(Unit);
 
 impl Units {
-    fn new(value: Option<Unit>) -> Result<Self, TypeError> {
+    pub fn new(value: Option<Unit>) -> Result<Self, TypeError> {
         Ok(Self(value.unwrap_or(Unit::M)))
     }
 }

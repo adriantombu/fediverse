@@ -6,7 +6,7 @@ use crate::types::errors::TypeError;
 pub struct StartIndex(usize);
 
 impl StartIndex {
-    fn new(value: usize) -> Result<Self, TypeError> {
+    pub fn new(value: usize) -> Result<Self, TypeError> {
         Ok(Self(value))
     }
 }

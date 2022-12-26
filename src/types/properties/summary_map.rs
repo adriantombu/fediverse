@@ -7,7 +7,7 @@ use std::collections::HashMap;
 pub struct SummaryMap(HashMap<String, String>);
 
 impl SummaryMap {
-    fn new(values: HashMap<&str, &str>) -> Result<Self, TypeError> {
+    pub fn new(values: HashMap<&str, &str>) -> Result<Self, TypeError> {
         let mut summaries: HashMap<String, String> = HashMap::new();
 
         for (k, v) in values {

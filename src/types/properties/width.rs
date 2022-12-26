@@ -6,7 +6,7 @@ use crate::types::errors::TypeError;
 pub struct Width(usize);
 
 impl Width {
-    fn new(value: usize) -> Result<Self, TypeError> {
+    pub fn new(value: usize) -> Result<Self, TypeError> {
         Ok(Self(value))
     }
 }

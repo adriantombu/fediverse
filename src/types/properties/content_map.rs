@@ -8,7 +8,7 @@ use std::collections::HashMap;
 pub struct ContentMap(HashMap<String, String>);
 
 impl ContentMap {
-    fn new(values: HashMap<&str, &str>) -> Result<Self, TypeError> {
+    pub fn new(values: HashMap<&str, &str>) -> Result<Self, TypeError> {
         let mut contents: HashMap<String, String> = HashMap::new();
 
         for (k, v) in values {

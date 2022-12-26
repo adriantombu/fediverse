@@ -8,7 +8,7 @@ use voca_rs::Voca;
 pub struct NameMap(HashMap<String, String>);
 
 impl NameMap {
-    fn new(values: HashMap<&str, &str>) -> Result<Self, TypeError> {
+    pub fn new(values: HashMap<&str, &str>) -> Result<Self, TypeError> {
         let mut names: HashMap<String, String> = HashMap::new();
 
         for (k, v) in values {

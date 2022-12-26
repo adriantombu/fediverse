@@ -8,7 +8,7 @@ use url::Url;
 pub struct Context(Url);
 
 impl Context {
-    fn new(value: &str) -> Result<Self, TypeError> {
+    pub fn new(value: &str) -> Result<Self, TypeError> {
         Ok(Self(Url::parse(value)?))
     }
 }

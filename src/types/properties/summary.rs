@@ -6,7 +6,7 @@ use crate::types::errors::TypeError;
 pub struct Summary(String);
 
 impl Summary {
-    fn new(value: &str) -> Result<Self, TypeError> {
+    pub fn new(value: &str) -> Result<Self, TypeError> {
         Ok(Self(value.to_string()))
     }
 }

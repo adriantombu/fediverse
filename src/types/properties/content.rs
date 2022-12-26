@@ -7,7 +7,7 @@ use crate::types::errors::TypeError;
 pub struct Content(String);
 
 impl Content {
-    fn new(value: &str) -> Result<Self, TypeError> {
+    pub fn new(value: &str) -> Result<Self, TypeError> {
         Ok(Self(value.to_string()))
     }
 }

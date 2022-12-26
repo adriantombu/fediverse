@@ -7,7 +7,7 @@ use url::Url;
 pub struct PartOf(Url);
 
 impl PartOf {
-    fn new(value: &str) -> Result<Self, TypeError> {
+    pub fn new(value: &str) -> Result<Self, TypeError> {
         Ok(Self(Url::parse(value)?))
     }
 }
@@ -18,19 +18,19 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let partOf = PartOf::new("http://example.org/abc");
+        let part_of = PartOf::new("http://example.org/abc");
 
-        assert!(partOf.is_ok());
+        assert!(part_of.is_ok());
         assert_eq!(
-            partOf.unwrap(),
+            part_of.unwrap(),
             PartOf(Url::parse("http://example.org/abc").unwrap())
         );
     }
 
     #[test]
     fn test_new_error() {
-        let partOf = PartOf::new("example/abc");
+        let part_of = PartOf::new("example/abc");
 
-        assert!(partOf.is_err());
+        assert!(part_of.is_err());
     }
 }

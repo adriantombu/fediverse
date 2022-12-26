@@ -7,7 +7,7 @@ use url::Url;
 pub struct Cc(Vec<Url>);
 
 impl Cc {
-    fn new(values: Vec<&str>) -> Result<Self, TypeError> {
+    pub fn new(values: Vec<&str>) -> Result<Self, TypeError> {
         let mut urls = vec![];
         for value in values {
             urls.push(Url::parse(value)?);

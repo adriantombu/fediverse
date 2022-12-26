@@ -10,7 +10,7 @@ pub const ACCURACY_MAX_BOUND: f32 = 100.0;
 pub struct Accuracy(f32);
 
 impl Accuracy {
-    fn new(value: f32) -> Result<Self, TypeError> {
+    pub fn new(value: f32) -> Result<Self, TypeError> {
         if value < ACCURACY_MIN_BOUND {
             return Err(TypeError::OutOfBoundsMin {
                 min: ACCURACY_MIN_BOUND.to_string(),

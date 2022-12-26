@@ -6,7 +6,7 @@ use crate::types::errors::TypeError;
 pub struct Altitude(f32);
 
 impl Altitude {
-    fn new(value: f32) -> Result<Self, TypeError> {
+    pub fn new(value: f32) -> Result<Self, TypeError> {
         Ok(Self(value))
     }
 }

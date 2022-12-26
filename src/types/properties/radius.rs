@@ -8,7 +8,7 @@ pub const RADIUS_MIN_BOUND: f32 = 0.0;
 pub struct Radius(f32);
 
 impl Radius {
-    fn new(value: f32) -> Result<Self, TypeError> {
+    pub fn new(value: f32) -> Result<Self, TypeError> {
         if value < RADIUS_MIN_BOUND {
             return Err(TypeError::OutOfBoundsMin {
                 min: RADIUS_MIN_BOUND.to_string(),

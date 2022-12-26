@@ -7,7 +7,7 @@ use voca_rs::Voca;
 pub struct Name(String);
 
 impl Name {
-    fn new(value: &str) -> Result<Self, TypeError> {
+    pub fn new(value: &str) -> Result<Self, TypeError> {
         Ok(Self(value.to_string()._strip_tags()))
     }
 }

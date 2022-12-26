@@ -9,7 +9,7 @@ pub const LONGITUDE_MAX_BOUND: f32 = 180.0;
 pub struct Longitude(f32);
 
 impl Longitude {
-    fn new(value: f32) -> Result<Self, TypeError> {
+    pub fn new(value: f32) -> Result<Self, TypeError> {
         if value < LONGITUDE_MIN_BOUND {
             return Err(TypeError::OutOfBoundsMin {
                 min: LONGITUDE_MIN_BOUND.to_string(),

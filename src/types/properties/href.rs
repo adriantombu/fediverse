@@ -7,7 +7,7 @@ use url::Url;
 pub struct Href(Url);
 
 impl Href {
-    fn new(value: &str) -> Result<Self, TypeError> {
+    pub fn new(value: &str) -> Result<Self, TypeError> {
         Ok(Self(Url::parse(value)?))
     }
 }

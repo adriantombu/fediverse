@@ -6,7 +6,7 @@ use crate::types::errors::TypeError;
 pub struct TotalItems(usize);
 
 impl TotalItems {
-    fn new(value: usize) -> Result<Self, TypeError> {
+    pub fn new(value: usize) -> Result<Self, TypeError> {
         Ok(Self(value))
     }
 }
