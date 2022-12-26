@@ -1,9 +1,17 @@
 [package]
-name = "activity-stream"
+name = "fediverse"
 version = "0.1.0"
 edition = "2021"
+authors = ["Adrian Tombu <adrian@otso.fr>"]
+keywords = ["activitypub", "activitystreams", "activity", "pub", "streams", "fediverse"]
+categories = ["web-programming", "network-programming"]
+description = "Just toying with the W3C ActivityStream & ActivityPub specs"
+license = "MIT"
+repository = "https://github.com/adriantombu/orion"
+documentation = "https://docs.rs/activitystreams"
+include = ["/src", "LICENSE.md", "README.md"]
 
 [dependencies]
-thiserror = "1.0.37"
-url = "2.3.1"
-voca_rs = "1.15.2"
+thiserror = "1"
+url = "2.3"
+voca_rs = "1.15"
