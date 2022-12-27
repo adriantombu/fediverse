@@ -18,12 +18,12 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let part_of = PartOf::new("http://example.org/abc");
+        let part_of = PartOf::new("https://example.org/abc");
 
         assert!(part_of.is_ok());
         assert_eq!(
             part_of.unwrap(),
-            PartOf(Url::parse("http://example.org/abc").unwrap())
+            PartOf(Url::parse("https://example.org/abc").unwrap())
         );
     }
 

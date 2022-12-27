@@ -18,12 +18,12 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let href = Href::new("http://example.org/abc");
+        let href = Href::new("https://example.org/abc");
 
         assert!(href.is_ok());
         assert_eq!(
             href.unwrap(),
-            Href(Url::parse("http://example.org/abc").unwrap())
+            Href(Url::parse("https://example.org/abc").unwrap())
         );
     }
 

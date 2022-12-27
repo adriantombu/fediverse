@@ -23,12 +23,12 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let bcc = Bcc::new(vec!["http://example.org/foo"]);
+        let bcc = Bcc::new(vec!["https://example.org/foo"]);
 
         assert!(bcc.is_ok());
         assert_eq!(
             bcc.unwrap(),
-            Bcc(vec![Url::parse("http://example.org/foo").unwrap()])
+            Bcc(vec![Url::parse("https://example.org/foo").unwrap()])
         );
     }
 

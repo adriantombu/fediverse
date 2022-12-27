@@ -1,25 +1,25 @@
 use crate::types::errors::TypeError;
 
-pub const LATITUDE_MIN_BOUND: f32 = -90.0;
-pub const LATITUDE_MAX_BOUND: f32 = 90.0;
-
 /// The latitude of a place
 /// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-latitude
 #[derive(Debug, PartialEq)]
 pub struct Latitude(f32);
 
 impl Latitude {
+    pub const MIN_BOUND: f32 = -90.0;
+    pub const MAX_BOUND: f32 = 90.0;
+
     pub fn new(value: f32) -> Result<Self, TypeError> {
-        if value < LATITUDE_MIN_BOUND {
+        if value < Self::MIN_BOUND {
             return Err(TypeError::OutOfBoundsMin {
-                min: LATITUDE_MIN_BOUND.to_string(),
+                min: Self::MIN_BOUND.to_string(),
                 found: value.to_string(),
             });
         }
 
-        if value > LATITUDE_MAX_BOUND {
+        if value > Self::MAX_BOUND {
             return Err(TypeError::OutOfBoundsMax {
-                max: LATITUDE_MAX_BOUND.to_string(),
+                max: Self::MAX_BOUND.to_string(),
                 found: value.to_string(),
             });
         }
@@ -48,7 +48,7 @@ mod tests {
         assert_eq!(
             latitude.unwrap_err(),
             TypeError::OutOfBoundsMin {
-                min: LATITUDE_MIN_BOUND.to_string(),
+                min: Latitude::MIN_BOUND.to_string(),
                 found: "-102.9".to_string()
             }
         );
@@ -62,7 +62,7 @@ mod tests {
         assert_eq!(
             latitude.unwrap_err(),
             TypeError::OutOfBoundsMax {
-                max: LATITUDE_MAX_BOUND.to_string(),
+                max: Latitude::MAX_BOUND.to_string(),
                 found: "183.12".to_string()
             }
         );

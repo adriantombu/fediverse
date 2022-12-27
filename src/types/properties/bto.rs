@@ -23,12 +23,12 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let bto = Bto::new(vec!["http://example.org/foo"]);
+        let bto = Bto::new(vec!["https://example.org/foo"]);
 
         assert!(bto.is_ok());
         assert_eq!(
             bto.unwrap(),
-            Bto(vec![Url::parse("http://example.org/foo").unwrap()])
+            Bto(vec![Url::parse("https://example.org/foo").unwrap()])
         );
     }
 

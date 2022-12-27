@@ -19,12 +19,12 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let context = Context::new("http://example.org/foo");
+        let context = Context::new("https://example.org/foo");
 
         assert!(context.is_ok());
         assert_eq!(
             context.unwrap(),
-            Context(Url::parse("http://example.org/foo").unwrap())
+            Context(Url::parse("https://example.org/foo").unwrap())
         );
     }
 

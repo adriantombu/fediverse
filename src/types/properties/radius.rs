@@ -1,17 +1,17 @@
 use crate::types::errors::TypeError;
 
-pub const RADIUS_MIN_BOUND: f32 = 0.0;
-
 /// The radius from the given latitude and longitude for a Place. The units is expressed by the units property. If units is not specified, the default is assumed to be "m" indicating "meters".
 /// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-radius
 #[derive(Debug, PartialEq)]
 pub struct Radius(f32);
 
 impl Radius {
+    pub const MIN_BOUND: f32 = 0.0;
+
     pub fn new(value: f32) -> Result<Self, TypeError> {
-        if value < RADIUS_MIN_BOUND {
+        if value < Self::MIN_BOUND {
             return Err(TypeError::OutOfBoundsMin {
-                min: RADIUS_MIN_BOUND.to_string(),
+                min: Self::MIN_BOUND.to_string(),
                 found: value.to_string(),
             });
         }
@@ -40,7 +40,7 @@ mod tests {
         assert_eq!(
             radius.unwrap_err(),
             TypeError::OutOfBoundsMin {
-                min: RADIUS_MIN_BOUND.to_string(),
+                min: Radius::MIN_BOUND.to_string(),
                 found: "-13.9".to_string()
             }
         );

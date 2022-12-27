@@ -5,3 +5,4 @@ Just toying with the W3C ActivityStream & ActivityPub specs, this project will p
 - https://www.w3.org/TR/activitystreams-core/
 - https://www.w3.org/TR/activitystreams-vocabulary
 - https://www.w3.org/TR/activitypub/
+- https://activitypub.rocks/

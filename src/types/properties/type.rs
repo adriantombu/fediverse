@@ -18,12 +18,12 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let t = Type::new("http://example.org/foo");
+        let t = Type::new("https://example.org/foo");
 
         assert!(t.is_ok());
         assert_eq!(
             t.unwrap(),
-            Type(Url::parse("http://example.org/foo").unwrap())
+            Type(Url::parse("https://example.org/foo").unwrap())
         );
     }
 

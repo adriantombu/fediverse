@@ -18,12 +18,12 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let id = Id::new("http://example.org/foo");
+        let id = Id::new("https://example.org/foo");
 
         assert!(id.is_ok());
         assert_eq!(
             id.unwrap(),
-            Id(Url::parse("http://example.org/foo").unwrap())
+            Id(Url::parse("https://example.org/foo").unwrap())
         );
     }
 

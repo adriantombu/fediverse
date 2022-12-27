@@ -23,12 +23,12 @@ mod tests {
 
     #[test]
     fn test_new() {
-        let cc = Cc::new(vec!["http://example.org/foo"]);
+        let cc = Cc::new(vec!["https://example.org/foo"]);
 
         assert!(cc.is_ok());
         assert_eq!(
             cc.unwrap(),
-            Cc(vec![Url::parse("http://example.org/foo").unwrap()])
+            Cc(vec![Url::parse("https://example.org/foo").unwrap()])
         );
     }
 

@@ -1,8 +1,5 @@
 use crate::types::errors::TypeError;
 
-pub const ACCURACY_MIN_BOUND: f32 = 0.0;
-pub const ACCURACY_MAX_BOUND: f32 = 100.0;
-
 /// Indicates the accuracy of position coordinates on a Place objects.
 /// Expressed in properties of percentage. e.g. "94.0" means "94.0% accurate".
 /// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-accuracy
@@ -10,17 +7,20 @@ pub const ACCURACY_MAX_BOUND: f32 = 100.0;
 pub struct Accuracy(f32);
 
 impl Accuracy {
+    pub const MIN_BOUND: f32 = 0.0;
+    pub const MAX_BOUND: f32 = 100.0;
+
     pub fn new(value: f32) -> Result<Self, TypeError> {
-        if value < ACCURACY_MIN_BOUND {
+        if value < Self::MIN_BOUND {
             return Err(TypeError::OutOfBoundsMin {
-                min: ACCURACY_MIN_BOUND.to_string(),
+                min: Self::MIN_BOUND.to_string(),
                 found: value.to_string(),
             });
         }
 
-        if value > ACCURACY_MAX_BOUND {
+        if value > Self::MAX_BOUND {
             return Err(TypeError::OutOfBoundsMax {
-                max: ACCURACY_MAX_BOUND.to_string(),
+                max: Self::MAX_BOUND.to_string(),
                 found: value.to_string(),
             });
         }
@@ -49,7 +49,7 @@ mod tests {
         assert_eq!(
             accuracy.unwrap_err(),
             TypeError::OutOfBoundsMin {
-                min: ACCURACY_MIN_BOUND.to_string(),
+                min: Accuracy::MIN_BOUND.to_string(),
                 found: "-31.19".to_string()
             }
         );
@@ -63,7 +63,7 @@ mod tests {
         assert_eq!(
             accuracy.unwrap_err(),
             TypeError::OutOfBoundsMax {
-                max: ACCURACY_MAX_BOUND.to_string(),
+                max: Accuracy::MAX_BOUND.to_string(),
                 found: "183.12".to_string()
             }
         );
