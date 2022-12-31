@@ -7,7 +7,7 @@ keywords = ["activitypub", "activitystreams", "activity", "fediverse"]
 categories = ["web-programming", "network-programming"]
 description = "Just toying with the W3C ActivityStream & ActivityPub specs"
 license = "MIT"
-repository = "https://github.com/adriantombu/orion"
+repository = "https://github.com/adriantombu/fediverse"
 documentation = "https://docs.rs/activitystreams"
 include = ["/src", "LICENSE.md", "README.md"]
 
