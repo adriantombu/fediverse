@@ -2,7 +2,7 @@ use crate::types::errors::TypeError;
 
 /// Indicates the accuracy of position coordinates on a Place objects.
 /// Expressed in properties of percentage. e.g. "94.0" means "94.0% accurate".
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-accuracy
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-accuracy>
 #[derive(Debug, PartialEq)]
 pub struct Accuracy(f32);
 

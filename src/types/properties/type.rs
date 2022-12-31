@@ -2,7 +2,7 @@ use crate::types::errors::TypeError;
 use url::Url;
 
 /// Identifies the Object or Link type. Multiple values may be specified.
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-type
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-type>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Type(Url);
 

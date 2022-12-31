@@ -2,7 +2,7 @@ use crate::types::errors::TypeError;
 use url::Url;
 
 /// Provides the globally unique identifier for an Object or Link.
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-id
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-id>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Id(Url);
 

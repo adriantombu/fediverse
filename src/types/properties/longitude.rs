@@ -1,7 +1,7 @@
 use crate::types::errors::TypeError;
 
 /// The longitude of a place
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-longitude
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-longitude>
 #[derive(Debug, PartialEq)]
 pub struct Longitude(f32);
 

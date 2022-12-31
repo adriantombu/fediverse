@@ -1,6 +1,6 @@
 [package]
 name = "fediverse"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Adrian Tombu <adrian@otso.fr>"]
 keywords = ["activitypub", "activitystreams", "activity", "fediverse"]
@@ -8,7 +8,7 @@ categories = ["web-programming", "network-programming"]
 description = "Just toying with the W3C ActivityStream & ActivityPub specs"
 license = "MIT"
 repository = "https://github.com/adriantombu/fediverse"
-documentation = "https://docs.rs/activitystreams"
+documentation = "https://docs.rs/fediverse"
 include = ["/src", "LICENSE.md", "README.md"]
 
 [dependencies]

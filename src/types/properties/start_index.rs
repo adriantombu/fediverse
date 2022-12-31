@@ -1,7 +1,7 @@
 use crate::types::errors::TypeError;
 
 /// A non-negative integer value identifying the relative position within the logical view of a strictly ordered collection.
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-startindex
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-startindex>
 #[derive(Debug, PartialEq, Eq)]
 pub struct StartIndex(usize);
 

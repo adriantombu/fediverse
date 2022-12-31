@@ -3,7 +3,7 @@ use url::Url;
 
 // TODO: handle Link object
 /// In a paged Collection, indicates the page that contains the most recently updated member items.
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-current
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-current>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Current(Url);
 

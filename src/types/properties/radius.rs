@@ -1,7 +1,7 @@
 use crate::types::errors::TypeError;
 
 /// The radius from the given latitude and longitude for a Place. The units is expressed by the units property. If units is not specified, the default is assumed to be "m" indicating "meters".
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-radius
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-radius>
 #[derive(Debug, PartialEq)]
 pub struct Radius(f32);
 

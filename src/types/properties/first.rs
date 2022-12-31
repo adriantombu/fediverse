@@ -3,7 +3,7 @@ use url::Url;
 
 // TODO: handle Link object
 /// In a paged Collection, indicates the furthest preceeding page of items in the collection.
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-first
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-first>
 #[derive(Debug, PartialEq, Eq)]
 pub struct First(Url);
 

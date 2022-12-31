@@ -1,7 +1,7 @@
 use crate::types::errors::TypeError;
 
 /// On a Link, specifies a hint as to the rendering width in device-independent pixels of the linked resource.
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-width
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-width>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Width(usize);
 

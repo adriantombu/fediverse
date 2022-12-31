@@ -2,7 +2,7 @@ use crate::types::errors::TypeError;
 
 /// The content or textual representation of the Object encoded as a JSON string. By default, the value of content is HTML. The mediaType property can be used in the object to indicate a different content type.
 /// The content MAY be expressed using multiple language-tagged values.
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-content
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-content>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Content(String);
 

@@ -11,7 +11,7 @@ pub enum Unit {
 }
 
 /// Specifies the measurement units for the radius and altitude properties on a Place object. If not specified, the default is assumed to be "m" for "meters".
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-totalitems
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-totalitems>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Units(Unit);
 

@@ -1,7 +1,7 @@
 use crate::types::errors::TypeError;
 
 /// The latitude of a place
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-latitude
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-latitude>
 #[derive(Debug, PartialEq)]
 pub struct Latitude(f32);
 

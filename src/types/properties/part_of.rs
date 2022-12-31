@@ -2,7 +2,7 @@ use crate::types::errors::TypeError;
 use url::Url;
 
 /// The target resource pointed to by a Link.
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-href
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-href>
 #[derive(Debug, PartialEq, Eq)]
 pub struct PartOf(Url);
 

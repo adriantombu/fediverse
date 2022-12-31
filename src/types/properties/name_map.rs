@@ -3,7 +3,7 @@ use std::collections::HashMap;
 use voca_rs::Voca;
 
 /// A simple, human-readable, plain-text name for the object. HTML markup MUST NOT be included. The name MAY be expressed using multiple language-tagged values.
-/// Specifications: https://www.w3.org/TR/activitystreams-vocabulary/#dfn-name
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-name>
 #[derive(Debug, PartialEq, Eq)]
 pub struct NameMap(HashMap<String, String>);
 
