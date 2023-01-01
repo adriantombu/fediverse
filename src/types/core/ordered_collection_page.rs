@@ -34,9 +34,10 @@ use crate::types::properties::total_items::TotalItems;
 use crate::types::properties::updated::Updated;
 use crate::types::properties::url::Url;
 
-/// Used to represent ordered subsets of items from an [OrderedCollection](crate::types::core::ordered_collection).
+/// Used to represent ordered subsets of items from an [OrderedCollection](crate::types::core::ordered_collection::OrderedCollection).
 /// Refer to the [Activity Streams 2.0 Core](https://www.w3.org/TR/activitystreams-core/#dfn-orderedcollectionpage)
 /// for a complete description of the `OrderedCollectionPage` object.
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollectionpage>
 pub struct OrderedCollectionPage {
     // Properties from Object

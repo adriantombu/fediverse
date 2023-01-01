@@ -1,6 +1,7 @@
 use crate::types::errors::TypeError;
 
-/// The latitude of a place
+/// The latitude of a [Place](crate::types::extended::object::place::Place).
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-latitude>
 #[derive(Debug, PartialEq)]
 pub struct Latitude(f32);

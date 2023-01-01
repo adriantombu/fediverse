@@ -10,8 +10,12 @@ pub enum Unit {
     Miles,
 }
 
-/// Specifies the measurement units for the radius and altitude properties on a Place object. If not specified, the default is assumed to be "m" for "meters".
-/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-totalitems>
+/// Specifies the measurement units for the [radius](crate::types::properties::radius::Radius) and
+/// [altitude](crate::types::properties::altitude::Altitude) properties on a [Place](crate::types::extended::object::place::Place) object.
+///
+/// If not specified, the default is assumed to be "`m`" for "meters".
+///
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-units>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Units(Unit);
 

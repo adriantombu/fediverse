@@ -1,7 +1,8 @@
 use crate::types::errors::TypeError;
 use url::Url;
 
-/// The target resource pointed to by a Link.
+/// The target resource pointed to by a [Link](crate::types::core::link::Link).
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-href>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Href(Url);

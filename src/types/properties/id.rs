@@ -1,7 +1,8 @@
 use crate::types::errors::TypeError;
 use url::Url;
 
-/// Provides the globally unique identifier for an Object or Link.
+/// Provides the globally unique identifier for an [Object](crate::types::core::object::Object) or [Link](crate::types::core::link::Link).
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-id>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Id(Url);

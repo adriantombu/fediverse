@@ -33,9 +33,10 @@ use crate::types::properties::total_items::TotalItems;
 use crate::types::properties::updated::Updated;
 use crate::types::properties::url::Url;
 
-/// Used to represent distinct subsets of items from a [Collection](crate::types::core::collection).
+/// Used to represent distinct subsets of items from a [Collection](crate::types::core::collection::Collection).
 /// Refer to the [Activity Streams 2.0 Core](https://www.w3.org/TR/activitystreams-core/#dfn-collectionpage)
 ///for a complete description of the `CollectionPage object`.
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-collectionpage>
 pub struct CollectionPage {
     // Properties from Object

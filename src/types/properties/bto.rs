@@ -2,6 +2,7 @@ use crate::types::errors::TypeError;
 use url::Url;
 
 /// Identifies an Object that is part of the private primary audience of this Object.
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-bto>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Bto(Vec<Url>);

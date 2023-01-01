@@ -2,6 +2,7 @@
 
 /// Identifies one or more entities to which this object is attributed. The attributed entities
 /// might not be Actors. For instance, an object might be attributed to the completion of another activity.
-/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-attributedTo>
+///
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-attributedto>
 #[derive(Debug)]
 pub struct AttributedTo {}

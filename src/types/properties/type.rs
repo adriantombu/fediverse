@@ -1,7 +1,9 @@
 use crate::types::errors::TypeError;
 use url::Url;
 
-/// Identifies the Object or Link type. Multiple values may be specified.
+/// Identifies the [Object](crate::types::core::object::Object) or [Link](crate::types::core::link::Link) type.
+/// Multiple values may be specified.
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-type>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Type(Url);

@@ -1,7 +1,9 @@
 use crate::types::errors::TypeError;
 use std::collections::HashMap;
 
-///  A natural language summarization of the object encoded as HTML. Multiple language tagged summaries MAY be provided.
+/// A natural language summarization of the object encoded as HTML. Multiple language tagged summaries
+/// MAY be provided.
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-summary>
 #[derive(Debug, PartialEq, Eq)]
 pub struct SummaryMap(HashMap<String, String>);

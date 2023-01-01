@@ -2,7 +2,9 @@ use crate::types::errors::TypeError;
 use url::Url;
 
 // TODO: handle Link object
-/// In a paged Collection, indicates the furthest preceeding page of items in the collection.
+/// In a paged [Collection](crate::types::core::collection::Collection), indicates the furthest
+/// preceeding page of items in the collection.
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-first>
 #[derive(Debug, PartialEq, Eq)]
 pub struct First(Url);

@@ -3,7 +3,8 @@ use url::Url;
 
 // TODO: handle Link object & list of mixed url + Link object
 /// Describes one or more entities that either performed or are expected to perform the activity.
-/// Any single activity can have multiple actors. The actor MAY be specified using an indirect Link.
+/// Any single activity can have multiple `actor`s. The `actor` MAY be specified using an indirect [Link](crate::types::core::link::Link).
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-actor>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Actor(Url);

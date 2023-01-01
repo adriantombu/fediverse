@@ -30,8 +30,9 @@ use crate::types::properties::total_items::TotalItems;
 use crate::types::properties::updated::Updated;
 use crate::types::properties::url::Url;
 
-///A subtype of [Collection](crate::types::core::collection) in which members of the logical
+///A subtype of [Collection](crate::types::core::collection::Collection) in which members of the logical
 /// collection are assumed to always be strictly ordered.
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection>
 pub struct OrderedCollection {
     // Properties from Object

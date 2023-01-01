@@ -27,8 +27,9 @@ use crate::types::properties::url::Url;
 
 /// Describes an object of any kind. The Object type serves as the base type for most of the other
 /// kinds of objects defined in the Activity Vocabulary, including other Core types such as
-/// [Activity](crate::types::core::activity), [IntransitiveActivity](crate::types::core::intransitive_activity),
-/// [Collection](crate::types::core::collection) and [OrderedCollection](crate::types::core::ordered_collection).
+/// [Activity](crate::types::core::activity::Activity), [IntransitiveActivity](crate::types::core::intransitive_activity::IntransitiveActivity),
+/// [Collection](crate::types::core::collection::Collection) and [OrderedCollection](crate::types::core::ordered_collection::OrderedCollection).
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-object>
 pub struct Object {
     pub attachment: Option<Attachment>,

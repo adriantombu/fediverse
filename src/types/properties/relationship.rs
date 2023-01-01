@@ -1,7 +1,10 @@
 use crate::types::errors::TypeError;
 use url::Url;
 
-/// On a Relationship object, the relationship property identifies the kind of relationship that exists between subject and object.
+/// On a [Relationship](crate::types::extended::object::relationship::Relationship) object, the
+/// `relationship` property identifies the kind of relationship that exists between [subject](crate::types::properties::subject::Subject)
+/// and [object](crate::types::properties::object::Object).
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-relationship>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Relationship(Url);

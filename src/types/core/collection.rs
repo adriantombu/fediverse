@@ -30,10 +30,11 @@ use crate::types::properties::total_items::TotalItems;
 use crate::types::properties::updated::Updated;
 use crate::types::properties::url::Url;
 
-/// A `Collection` is a subtype of [Object](crate::types::core::object) that represents ordered or
-/// unordered sets of [Object](crate::types::core::object) or [Link](crate::types::core::link) instances.
+/// A `Collection` is a subtype of [Object](crate::types::core::object::Object) that represents ordered or
+/// unordered sets of [Object](crate::types::core::object::Object) or [Link](crate::types::core::link::Link) instances.
 /// Refer to the [Activity Streams 2.0 Core specification](https://www.w3.org/TR/activitystreams-core/#collection)
 /// for a complete description of the `Collection` type.
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-collection>
 pub struct Collection {
     // Properties from Object

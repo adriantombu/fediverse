@@ -2,6 +2,7 @@ use crate::types::errors::TypeError;
 use url::Url;
 
 /// Identifies an Object that is part of the public secondary audience of this Object.
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-cc>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Cc(Vec<Url>);

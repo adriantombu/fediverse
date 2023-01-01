@@ -1,6 +1,8 @@
 use crate::types::errors::TypeError;
 
-/// On a Link, specifies a hint as to the rendering height in device-independent pixels of the linked resource.
+/// On a [Link](crate::types::core::link::Link), specifies a hint as to the rendering height in
+/// device-independent pixels of the linked resource.
+///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-height>
 #[derive(Debug, PartialEq, Eq)]
 pub struct Height(usize);
