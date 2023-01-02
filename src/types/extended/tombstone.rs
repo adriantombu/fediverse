@@ -1,4 +1,3 @@
-use crate::types::properties::actor::Actor;
 use crate::types::properties::attachment::Attachment;
 use crate::types::properties::attributed_to::AttributedTo;
 use crate::types::properties::audience::Audience;
@@ -7,36 +6,30 @@ use crate::types::properties::bto::Bto;
 use crate::types::properties::cc::Cc;
 use crate::types::properties::content::Content;
 use crate::types::properties::context::Context;
+use crate::types::properties::deleted::Deleted;
 use crate::types::properties::duration::Duration;
 use crate::types::properties::end_time::EndTime;
+use crate::types::properties::former_type::FormerType;
 use crate::types::properties::generator::Generator;
 use crate::types::properties::icon::Icon;
 use crate::types::properties::image::Image;
 use crate::types::properties::in_reply_to::InReplyTo;
-use crate::types::properties::instrument::Instrument;
 use crate::types::properties::location::Location;
 use crate::types::properties::media_type::MediaType;
 use crate::types::properties::name::Name;
-use crate::types::properties::object::Object;
-use crate::types::properties::origin::Origin;
 use crate::types::properties::preview::Preview;
 use crate::types::properties::published::Published;
 use crate::types::properties::replies::Replies;
-use crate::types::properties::result::Result;
 use crate::types::properties::start_time::StartTime;
 use crate::types::properties::summary::Summary;
 use crate::types::properties::tag::Tag;
-use crate::types::properties::target::Target;
 use crate::types::properties::to::To;
 use crate::types::properties::updated::Updated;
 use crate::types::properties::url::Url;
 
-/// Indicates that the `actor` is ignoring the `object`.
-///
-/// The `target` and `origin` typically have no defined meaning.
-///
-/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-ignore>
-pub struct Ignore {
+/// A Tombstone represents a content object that has been deleted. It can be used in [Collections](crate::types::core::collection::Collection)
+/// to signify that there used to be an object at this position, but it has been deleted.
+pub struct Tombstone {
     // Properties from Object
     pub attachment: Option<Attachment>,
     pub attributed_to: Option<AttributedTo>,
@@ -65,11 +58,6 @@ pub struct Ignore {
     pub media_type: Option<MediaType>,
     pub duration: Option<Duration>,
 
-    // Properties from Activity
-    pub actor: Option<Actor>,
-    pub object: Option<Object>,
-    pub target: Option<Target>,
-    pub result: Option<Result>,
-    pub origin: Option<Origin>,
-    pub instrument: Option<Instrument>,
+    pub former_type: Option<FormerType>,
+    pub deleted: Option<Deleted>,
 }

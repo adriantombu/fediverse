@@ -1,4 +1,3 @@
-use crate::types::properties::actor::Actor;
 use crate::types::properties::attachment::Attachment;
 use crate::types::properties::attributed_to::AttributedTo;
 use crate::types::properties::audience::Audience;
@@ -13,29 +12,31 @@ use crate::types::properties::generator::Generator;
 use crate::types::properties::icon::Icon;
 use crate::types::properties::image::Image;
 use crate::types::properties::in_reply_to::InReplyTo;
-use crate::types::properties::instrument::Instrument;
 use crate::types::properties::location::Location;
 use crate::types::properties::media_type::MediaType;
 use crate::types::properties::name::Name;
 use crate::types::properties::object::Object;
-use crate::types::properties::origin::Origin;
 use crate::types::properties::preview::Preview;
 use crate::types::properties::published::Published;
+use crate::types::properties::relationship::Relationship as RelationshipProperty;
 use crate::types::properties::replies::Replies;
-use crate::types::properties::result::Result;
 use crate::types::properties::start_time::StartTime;
+use crate::types::properties::subject::Subject;
 use crate::types::properties::summary::Summary;
 use crate::types::properties::tag::Tag;
-use crate::types::properties::target::Target;
 use crate::types::properties::to::To;
 use crate::types::properties::updated::Updated;
 use crate::types::properties::url::Url;
 
-/// A specialization of [Reject](crate::types::extended::activity::reject::Reject) in which the
-/// rejection is considered tentative.
+/// Describes a relationship between two individuals.
 ///
-/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-tentativereject>
-pub struct TentativeReject {
+/// The `subject` and `object properties are used to identify the connected individuals.
+///
+/// See [5.2 Representing Relationships Between Entities](https://www.w3.org/TR/activitystreams-vocabulary/#connections)
+/// for additional information.
+///
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-relationship>
+pub struct Relationship {
     // Properties from Object
     pub attachment: Option<Attachment>,
     pub attributed_to: Option<AttributedTo>,
@@ -64,11 +65,7 @@ pub struct TentativeReject {
     pub media_type: Option<MediaType>,
     pub duration: Option<Duration>,
 
-    // Properties from Activity
-    pub actor: Option<Actor>,
+    pub subject: Option<Subject>,
     pub object: Option<Object>,
-    pub target: Option<Target>,
-    pub result: Option<Result>,
-    pub origin: Option<Origin>,
-    pub instrument: Option<Instrument>,
+    pub relationship: Option<RelationshipProperty>,
 }

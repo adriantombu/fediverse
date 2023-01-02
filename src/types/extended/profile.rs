@@ -1,4 +1,3 @@
-use crate::types::properties::actor::Actor;
 use crate::types::properties::attachment::Attachment;
 use crate::types::properties::attributed_to::AttributedTo;
 use crate::types::properties::audience::Audience;
@@ -7,34 +6,33 @@ use crate::types::properties::bto::Bto;
 use crate::types::properties::cc::Cc;
 use crate::types::properties::content::Content;
 use crate::types::properties::context::Context;
+use crate::types::properties::describes::Describes;
 use crate::types::properties::duration::Duration;
 use crate::types::properties::end_time::EndTime;
 use crate::types::properties::generator::Generator;
 use crate::types::properties::icon::Icon;
 use crate::types::properties::image::Image;
 use crate::types::properties::in_reply_to::InReplyTo;
-use crate::types::properties::instrument::Instrument;
 use crate::types::properties::location::Location;
 use crate::types::properties::media_type::MediaType;
 use crate::types::properties::name::Name;
-use crate::types::properties::object::Object;
-use crate::types::properties::origin::Origin;
 use crate::types::properties::preview::Preview;
 use crate::types::properties::published::Published;
 use crate::types::properties::replies::Replies;
-use crate::types::properties::result::Result;
 use crate::types::properties::start_time::StartTime;
 use crate::types::properties::summary::Summary;
 use crate::types::properties::tag::Tag;
-use crate::types::properties::target::Target;
 use crate::types::properties::to::To;
 use crate::types::properties::updated::Updated;
 use crate::types::properties::url::Url;
 
-/// Indicates that the `actor` dislikes the `object`.
+/// A Profile is a content object that describes another Object, typically used to describe
+/// [Actor Type](https://www.w3.org/TR/activitystreams-vocabulary/#actor-types) objects.
 ///
-/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-dislike>
-pub struct Dislike {
+/// The `describes` property is used to reference the object being described by the profile.
+///
+/// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-profile>
+pub struct Profile {
     // Properties from Object
     pub attachment: Option<Attachment>,
     pub attributed_to: Option<AttributedTo>,
@@ -63,11 +61,5 @@ pub struct Dislike {
     pub media_type: Option<MediaType>,
     pub duration: Option<Duration>,
 
-    // Properties from Activity
-    pub actor: Option<Actor>,
-    pub object: Option<Object>,
-    pub target: Option<Target>,
-    pub result: Option<Result>,
-    pub origin: Option<Origin>,
-    pub instrument: Option<Instrument>,
+    pub describes: Option<Describes>,
 }

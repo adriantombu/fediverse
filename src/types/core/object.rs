@@ -32,6 +32,8 @@ use crate::types::properties::url::Url;
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-object>
 pub struct Object {
+    pub r#type: ObjectType,
+
     pub attachment: Option<Attachment>,
     pub attributed_to: Option<AttributedTo>,
     pub audience: Option<Audience>,
@@ -58,4 +60,54 @@ pub struct Object {
     pub bcc: Option<Bcc>,
     pub media_type: Option<MediaType>,
     pub duration: Option<Duration>,
+}
+
+/// The Object type serves as the base type for most of the other kinds of objects defined in the
+/// Activity Vocabulary, including other Core types such as [Activity](crate::types::core::activity::Activity),
+/// [IntransitiveActivity](crate::types::core::intransitive_activity::IntransitiveActivity),
+/// [Collection](crate::types::core::collection::Collection) and
+/// [OrderedCollection](crate::types::core::ordered_collection::OrderedCollection).
+pub enum ObjectType {
+    /// Base type
+    Object,
+
+    /// Describes a software application.
+    ///
+    /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-application>
+    Application,
+
+    /// Represents any kind of multi-paragraph written work.
+    ///
+    /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-article>
+    Article,
+
+    /// Represents any kind of event.
+    ///
+    /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-event>
+    Event,
+
+    /// Represents a formal or informal collective of Actors.
+    ///
+    /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-group>
+    Group,
+
+    /// Represents a short written work typically less than a single paragraph in length.
+    ///
+    /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-image>
+    Note,
+
+    /// Represents an organization.
+    ///
+    /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-organization>
+    Organization,
+
+    /// Represents an individual person.
+    ///
+    /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-person>
+    Person,
+
+    /// Represents a service of any kind.
+    ///
+    /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-service>
+    Service,
 }

@@ -17,6 +17,8 @@ use crate::types::properties::width::Width;
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-link>
 pub struct Link {
+    pub r#type: LinkType,
+
     pub href: Href,
     pub rel: Option<Rel>,
     pub media_type: Option<MediaType>,
@@ -25,4 +27,13 @@ pub struct Link {
     pub height: Option<Height>,
     pub width: Option<Width>,
     pub preview: Option<Preview>,
+}
+
+pub enum LinkType {
+    Link,
+
+    /// A specialized [Link](crate::types::core::link::Link) that represents an @mention.
+    ///
+    /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-mention>
+    Mention,
 }
