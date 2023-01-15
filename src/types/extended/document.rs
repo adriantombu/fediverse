@@ -28,6 +28,7 @@ use crate::types::properties::url::Url;
 /// Represents a document of any kind.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-document>
+#[derive(Debug, PartialEq, Eq)]
 pub struct Document {
     pub r#type: DocumentType,
 
@@ -60,7 +61,9 @@ pub struct Document {
     pub duration: Option<Duration>,
 }
 
+#[derive(Debug, PartialEq, Eq)]
 pub enum DocumentType {
+    /// Represents a document of any kind.
     Document,
 
     /// Represents an audio document of any kind.

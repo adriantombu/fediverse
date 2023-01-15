@@ -39,6 +39,7 @@ use crate::types::properties::url::Url;
 /// for a complete description of the `OrderedCollectionPage` object.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollectionpage>
+#[derive(Debug, PartialEq, Eq)]
 pub struct OrderedCollectionPage {
     // Properties from Object
     pub attachment: Option<Attachment>,

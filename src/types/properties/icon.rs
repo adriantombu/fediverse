@@ -4,5 +4,5 @@
 /// of one (horizontal) to one (vertical) and should be suitable for presentation at a small size.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-icon>
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct Icon {}

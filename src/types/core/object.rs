@@ -31,6 +31,7 @@ use crate::types::properties::url::Url;
 /// [Collection](crate::types::core::collection::Collection) and [OrderedCollection](crate::types::core::ordered_collection::OrderedCollection).
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-object>
+#[derive(Debug, PartialEq, Eq)]
 pub struct Object {
     pub r#type: ObjectType,
 
@@ -67,6 +68,7 @@ pub struct Object {
 /// [IntransitiveActivity](crate::types::core::intransitive_activity::IntransitiveActivity),
 /// [Collection](crate::types::core::collection::Collection) and
 /// [OrderedCollection](crate::types::core::ordered_collection::OrderedCollection).
+#[derive(Debug, PartialEq, Eq)]
 pub enum ObjectType {
     /// Base type
     Object,

@@ -4,5 +4,5 @@
 /// no aspect ratio or display size limitations assumed.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-image>
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct Image {}

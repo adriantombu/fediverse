@@ -34,6 +34,7 @@ use crate::types::properties::url::Url;
 /// Represents a logical or physical location. See [5.3 Representing Places for additional information](https://www.w3.org/TR/activitystreams-vocabulary/#places).
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-page>
+#[derive(Debug, PartialEq)]
 pub struct Place {
     // Properties from Object
     pub attachment: Option<Attachment>,

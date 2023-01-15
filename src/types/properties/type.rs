@@ -14,6 +14,12 @@ impl Type {
     }
 }
 
+impl std::fmt::Display for Type {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.0)
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -21,12 +27,11 @@ mod tests {
     #[test]
     fn test_new() {
         let t = Type::new("https://example.org/foo");
-
         assert!(t.is_ok());
-        assert_eq!(
-            t.unwrap(),
-            Type(Url::parse("https://example.org/foo").unwrap())
-        );
+
+        let value = t.unwrap();
+        assert_eq!(value, Type(Url::parse("https://example.org/foo").unwrap()));
+        assert_eq!(value.to_string(), "https://example.org/foo");
     }
 
     #[test]

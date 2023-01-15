@@ -38,6 +38,7 @@ use crate::types::properties::url::Url;
 ///for a complete description of the `CollectionPage object`.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-collectionpage>
+#[derive(Debug, PartialEq, Eq)]
 pub struct CollectionPage {
     // Properties from Object
     pub attachment: Option<Attachment>,

@@ -1,18 +1,31 @@
+use crate::types::core::object::Object;
 use crate::types::errors::TypeError;
 use url::Url;
 
-// TODO: handle Link object & list of mixed url + Link object
 /// Describes one or more entities that either performed or are expected to perform the activity.
 /// Any single activity can have multiple `actor`s. The `actor` MAY be specified using an indirect [Link](crate::types::core::link::Link).
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-actor>
 #[derive(Debug, PartialEq, Eq)]
-pub struct Actor(Url);
+pub struct Actor(ActorType);
 
 impl Actor {
-    pub fn new(value: &str) -> Result<Self, TypeError> {
-        Ok(Self(Url::parse(value)?))
+    pub fn new(value: ActorType) -> Result<Self, TypeError> {
+        Ok(Self(value))
     }
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub enum ActorType {
+    Url(Url),
+    Object(Object),
+    Values(Vec<ActorTypeValues>),
+}
+
+#[derive(Debug, PartialEq, Eq)]
+pub enum ActorTypeValues {
+    Url(Url),
+    Object(Object),
 }
 
 #[cfg(test)]
@@ -20,20 +33,17 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_new() {
-        let t = Actor::new("https://example.org/foo");
+    fn test_new_link() {
+        let t = Actor::new(ActorType::Url(
+            Url::try_from("https://example.org/foo").unwrap(),
+        ));
 
         assert!(t.is_ok());
         assert_eq!(
             t.unwrap(),
-            Actor(Url::parse("https://example.org/foo").unwrap())
+            Actor(ActorType::Url(
+                Url::try_from("https://example.org/foo").unwrap()
+            ))
         );
-    }
-
-    #[test]
-    fn test_new_error() {
-        let t = Actor::new("example/foo");
-
-        assert!(t.is_err());
     }
 }

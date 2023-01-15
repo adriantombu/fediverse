@@ -1,6 +1,6 @@
 [package]
 name = "fediverse"
-version = "0.1.5"
+version = "0.1.6"
 edition = "2021"
 authors = ["Adrian Tombu <adrian@otso.fr>"]
 keywords = ["activitypub", "activitystreams", "activity", "fediverse"]

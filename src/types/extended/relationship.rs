@@ -36,6 +36,7 @@ use crate::types::properties::url::Url;
 /// for additional information.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-relationship>
+#[derive(Debug, PartialEq, Eq)]
 pub struct Relationship {
     // Properties from Object
     pub attachment: Option<Attachment>,

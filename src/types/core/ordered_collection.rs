@@ -34,6 +34,7 @@ use crate::types::properties::url::Url;
 /// collection are assumed to always be strictly ordered.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollection>
+#[derive(Debug, PartialEq, Eq)]
 pub struct OrderedCollection {
     // Properties from Object
     pub attachment: Option<Attachment>,

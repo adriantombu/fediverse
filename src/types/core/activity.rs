@@ -36,6 +36,7 @@ use crate::types::properties::url::Url;
 /// itself serves as an abstract base type for all types of activities.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-activity>
+#[derive(Debug, PartialEq, Eq)]
 pub struct Activity {
     // Properties from Object
     pub attachment: Option<Attachment>,
@@ -75,6 +76,7 @@ pub struct Activity {
 }
 
 /// The Activity type itself serves as an abstract base type for all types of activities.
+#[derive(Debug, PartialEq, Eq)]
 pub enum ActivityType {
     /// It is important to note that the `Activity` type itself does not carry any specific
     /// semantics about the kind of action being taken.

@@ -20,6 +20,7 @@ pub struct IntransitiveActivity {
     pub instrument: Option<Instrument>,
 }
 
+#[derive(Debug, PartialEq, Eq)]
 pub enum IntransitiveActivityType {
     /// An [IntransitiveActivity](crate::types::core::intransitive_activity::IntransitiveActivity) that
     /// indicates that the `actor` has arrived at the `location`

@@ -13,6 +13,12 @@ impl Id {
     }
 }
 
+impl std::fmt::Display for Id {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}", self.0)
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -20,12 +26,11 @@ mod tests {
     #[test]
     fn test_new() {
         let id = Id::new("https://example.org/foo");
-
         assert!(id.is_ok());
-        assert_eq!(
-            id.unwrap(),
-            Id(Url::parse("https://example.org/foo").unwrap())
-        );
+
+        let value = id.unwrap();
+        assert_eq!(value, Id(Url::parse("https://example.org/foo").unwrap()));
+        assert_eq!(value.to_string(), "https://example.org/foo");
     }
 
     #[test]

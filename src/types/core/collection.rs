@@ -36,6 +36,7 @@ use crate::types::properties::url::Url;
 /// for a complete description of the `Collection` type.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-collection>
+#[derive(Debug, PartialEq, Eq)]
 pub struct Collection {
     // Properties from Object
     pub attachment: Option<Attachment>,
