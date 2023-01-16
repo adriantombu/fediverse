@@ -5,7 +5,7 @@ use crate::types::errors::TypeError;
 /// The intent is to provide a model that is at least semantically similar to attachments in email.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-attachment>
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq)]
 pub struct Attachment(Vec<Object>);
 
 impl Attachment {

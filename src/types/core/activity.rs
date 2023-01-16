@@ -1,72 +1,38 @@
+use crate::types::core::object::ObjectProperties;
 use crate::types::properties::actor::Actor;
-use crate::types::properties::attachment::Attachment;
-use crate::types::properties::attributed_to::AttributedTo;
-use crate::types::properties::audience::Audience;
-use crate::types::properties::bcc::Bcc;
-use crate::types::properties::bto::Bto;
-use crate::types::properties::cc::Cc;
-use crate::types::properties::content::Content;
-use crate::types::properties::context::Context;
-use crate::types::properties::duration::Duration;
-use crate::types::properties::end_time::EndTime;
-use crate::types::properties::generator::Generator;
-use crate::types::properties::icon::Icon;
-use crate::types::properties::image::Image;
-use crate::types::properties::in_reply_to::InReplyTo;
 use crate::types::properties::instrument::Instrument;
-use crate::types::properties::location::Location;
-use crate::types::properties::media_type::MediaType;
-use crate::types::properties::name::Name;
 use crate::types::properties::object::Object;
 use crate::types::properties::origin::Origin;
-use crate::types::properties::preview::Preview;
-use crate::types::properties::published::Published;
-use crate::types::properties::replies::Replies;
 use crate::types::properties::result::Result;
-use crate::types::properties::start_time::StartTime;
-use crate::types::properties::summary::Summary;
-use crate::types::properties::tag::Tag;
 use crate::types::properties::target::Target;
-use crate::types::properties::to::To;
-use crate::types::properties::updated::Updated;
-use crate::types::properties::url::Url;
 
 /// An `Activity` is a subtype of [Object](crate::types::core::object::Object) that describes some form of
 /// action that may happen, is currently happening, or has already happened. The `Activity` type
 /// itself serves as an abstract base type for all types of activities.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-activity>
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Default, Debug, PartialEq)]
 pub struct Activity {
-    // Properties from Object
-    pub attachment: Option<Attachment>,
-    pub attributed_to: Option<AttributedTo>,
-    pub audience: Option<Audience>,
-    pub content: Option<Content>,
-    pub context: Option<Context>,
-    pub name: Option<Name>,
-    pub end_time: Option<EndTime>,
-    pub generator: Option<Generator>,
-    pub icon: Option<Icon>,
-    pub image: Option<Image>,
-    pub in_reply_to: Option<InReplyTo>,
-    pub location: Option<Location>,
-    pub preview: Option<Preview>,
-    pub published: Option<Published>,
-    pub replies: Option<Replies>,
-    pub start_time: Option<StartTime>,
-    pub summary: Option<Summary>,
-    pub tag: Option<Tag>,
-    pub updated: Option<Updated>,
-    pub url: Option<Url>,
-    pub to: Option<To>,
-    pub bto: Option<Bto>,
-    pub cc: Option<Cc>,
-    pub bcc: Option<Bcc>,
-    pub media_type: Option<MediaType>,
-    pub duration: Option<Duration>,
+    r#type: String,
+    pub object_properties: ObjectProperties,
+    pub activity_properties: ActivityProperties,
+}
 
-    pub r#type: ActivityType,
+impl Activity {
+    pub fn new(
+        object_properties: ObjectProperties,
+        activity_properties: ActivityProperties,
+    ) -> Self {
+        Self {
+            r#type: "Activity".to_string(),
+            object_properties,
+            activity_properties,
+        }
+    }
+}
+
+#[derive(Default, Debug, PartialEq)]
+pub struct ActivityProperties {
     pub actor: Option<Actor>,
     pub object: Option<Object>,
     pub target: Option<Target>,
@@ -75,6 +41,7 @@ pub struct Activity {
     pub instrument: Option<Instrument>,
 }
 
+// TODO: export again as standalone types
 /// The Activity type itself serves as an abstract base type for all types of activities.
 #[derive(Debug, PartialEq, Eq)]
 pub enum ActivityType {

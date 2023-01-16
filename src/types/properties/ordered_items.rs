@@ -5,9 +5,9 @@ use crate::types::errors::TypeError;
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-items>
 #[derive(Debug, PartialEq)]
-pub struct Items(Vec<Object>);
+pub struct OrderedItems(Vec<Object>);
 
-impl Items {
+impl OrderedItems {
     pub fn new(value: Vec<Object>) -> Result<Self, TypeError> {
         Ok(Self(value))
     }

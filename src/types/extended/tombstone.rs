@@ -29,7 +29,7 @@ use crate::types::properties::url::Url;
 
 /// A Tombstone represents a content object that has been deleted. It can be used in [Collections](crate::types::core::collection::Collection)
 /// to signify that there used to be an object at this position, but it has been deleted.
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq)]
 pub struct Tombstone {
     // Properties from Object
     pub attachment: Option<Attachment>,

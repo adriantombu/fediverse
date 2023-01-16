@@ -31,46 +31,62 @@ use crate::types::properties::url::Url;
 /// [Collection](crate::types::core::collection::Collection) and [OrderedCollection](crate::types::core::ordered_collection::OrderedCollection).
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-object>
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Default, Debug, PartialEq)]
 pub struct Object {
-    pub r#type: ObjectType,
+    pub r#type: String,
 
-    pub attachment: Option<Attachment>,
-    pub attributed_to: Option<AttributedTo>,
-    pub audience: Option<Audience>,
-    pub content: Option<Content>,
-    pub context: Option<Context>,
-    pub name: Option<Name>,
-    pub end_time: Option<EndTime>,
-    pub generator: Option<Generator>,
-    pub icon: Option<Icon>,
-    pub image: Option<Image>,
-    pub in_reply_to: Option<InReplyTo>,
-    pub location: Option<Location>,
-    pub preview: Option<Preview>,
-    pub published: Option<Published>,
-    pub replies: Option<Replies>,
-    pub start_time: Option<StartTime>,
-    pub summary: Option<Summary>,
-    pub tag: Option<Tag>,
-    pub updated: Option<Updated>,
-    pub url: Option<Url>,
-    pub to: Option<To>,
-    pub bto: Option<Bto>,
-    pub cc: Option<Cc>,
-    pub bcc: Option<Bcc>,
-    pub media_type: Option<MediaType>,
-    pub duration: Option<Duration>,
+    pub object_properties: ObjectProperties,
 }
 
+impl Object {
+    pub fn new() -> Self {
+        Self {
+            r#type: "Object".to_string(),
+            ..Object::default()
+        }
+    }
+}
+
+#[derive(Default, Debug, PartialEq)]
+pub struct ObjectProperties {
+    pub attachment: Option<Box<Attachment>>,
+    pub attributed_to: Option<Box<AttributedTo>>,
+    pub audience: Option<Box<Audience>>,
+    pub content: Option<Box<Content>>,
+    pub context: Option<Box<Context>>,
+    pub name: Option<Box<Name>>,
+    pub end_time: Option<Box<EndTime>>,
+    pub generator: Option<Box<Generator>>,
+    pub icon: Option<Box<Icon>>,
+    pub image: Option<Box<Image>>,
+    pub in_reply_to: Option<Box<InReplyTo>>,
+    pub location: Option<Box<Location>>,
+    pub preview: Option<Box<Preview>>,
+    pub published: Option<Box<Published>>,
+    pub replies: Option<Box<Replies>>,
+    pub start_time: Option<Box<StartTime>>,
+    pub summary: Option<Box<Summary>>,
+    pub tag: Option<Box<Tag>>,
+    pub updated: Option<Box<Updated>>,
+    pub url: Option<Box<Url>>,
+    pub to: Option<Box<To>>,
+    pub bto: Option<Box<Bto>>,
+    pub cc: Option<Box<Cc>>,
+    pub bcc: Option<Box<Bcc>>,
+    pub media_type: Option<Box<MediaType>>,
+    pub duration: Option<Box<Duration>>,
+}
+
+// TODO: export again as standalone types
 /// The Object type serves as the base type for most of the other kinds of objects defined in the
 /// Activity Vocabulary, including other Core types such as [Activity](crate::types::core::activity::Activity),
 /// [IntransitiveActivity](crate::types::core::intransitive_activity::IntransitiveActivity),
 /// [Collection](crate::types::core::collection::Collection) and
 /// [OrderedCollection](crate::types::core::ordered_collection::OrderedCollection).
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Default, Debug, PartialEq, Eq)]
 pub enum ObjectType {
     /// Base type
+    #[default]
     Object,
 
     /// Describes a software application.

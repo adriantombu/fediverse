@@ -39,6 +39,7 @@ pub mod name_map;
 pub mod next;
 pub mod object;
 pub mod one_of;
+pub mod ordered_items;
 pub mod origin;
 pub mod part_of;
 pub mod prev;

@@ -5,7 +5,7 @@ use crate::types::errors::TypeError;
 /// object can considered to be relevant.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-audience>
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq)]
 pub struct Audience(Vec<Object>);
 
 impl Audience {

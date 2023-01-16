@@ -10,8 +10,26 @@ use crate::types::properties::target::Target;
 /// activities.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-intransitiveactivity>
+#[derive(Debug, PartialEq)]
 pub struct IntransitiveActivity {
     pub r#type: IntransitiveActivityType,
+    pub intransitive_activity_properties: IntransitiveActivityProperties,
+}
+
+impl IntransitiveActivity {
+    pub fn new(
+        r#type: IntransitiveActivityType,
+        intransitive_activity_properties: IntransitiveActivityProperties,
+    ) -> Self {
+        Self {
+            r#type,
+            intransitive_activity_properties,
+        }
+    }
+}
+
+#[derive(Debug, PartialEq)]
+pub struct IntransitiveActivityProperties {
     pub actor: Option<Actor>,
     pub object: Option<Object>,
     pub target: Option<Target>,

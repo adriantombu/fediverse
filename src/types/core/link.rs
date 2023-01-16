@@ -1,4 +1,3 @@
-use crate::types::errors::TypeError;
 use crate::types::properties::height::Height;
 use crate::types::properties::href::Href;
 use crate::types::properties::hreflang::Hreflang;
@@ -19,8 +18,21 @@ use crate::types::properties::width::Width;
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-link>
 #[derive(Default, Debug, Eq, PartialEq)]
 pub struct Link {
-    pub r#type: LinkType,
+    pub r#type: String,
+    pub link_properties: LinkProperties,
+}
 
+impl Link {
+    pub fn new(link_properties: LinkProperties) -> Self {
+        Self {
+            r#type: "Link".to_string(),
+            link_properties,
+        }
+    }
+}
+
+#[derive(Default, Debug, Eq, PartialEq)]
+pub struct LinkProperties {
     pub href: Option<Href>,
     pub rel: Option<Rel>,
     pub media_type: Option<MediaType>,
@@ -31,18 +43,7 @@ pub struct Link {
     pub preview: Option<Preview>,
 }
 
-/// A valid url string
-impl TryFrom<&str> for Link {
-    type Error = TypeError;
-
-    fn try_from(value: &str) -> Result<Self, Self::Error> {
-        Ok(Self {
-            href: Some(Href::new(value)?),
-            ..Default::default()
-        })
-    }
-}
-
+// TODO: export again as standalone types
 #[derive(Default, Debug, Eq, PartialEq)]
 pub enum LinkType {
     #[default]
@@ -52,23 +53,4 @@ pub enum LinkType {
     ///
     /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-mention>
     Mention,
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn test_try_from_string() {
-        let link: Result<Link, TypeError> = "https://example.org/abc".try_into();
-
-        assert!(link.is_ok());
-        assert_eq!(
-            link.unwrap(),
-            Link {
-                href: Some(Href::new("https://example.org/abc").unwrap()),
-                ..Default::default()
-            }
-        );
-    }
 }

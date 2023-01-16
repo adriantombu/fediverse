@@ -32,7 +32,7 @@ use crate::types::properties::url::Url;
 /// The `describes` property is used to reference the object being described by the profile.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-profile>
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq)]
 pub struct Profile {
     // Properties from Object
     pub attachment: Option<Attachment>,

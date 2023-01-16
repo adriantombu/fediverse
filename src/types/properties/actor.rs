@@ -6,7 +6,7 @@ use url::Url;
 /// Any single activity can have multiple `actor`s. The `actor` MAY be specified using an indirect [Link](crate::types::core::link::Link).
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-actor>
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq)]
 pub struct Actor(ActorType);
 
 impl Actor {
@@ -15,14 +15,14 @@ impl Actor {
     }
 }
 
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq)]
 pub enum ActorType {
     Url(Url),
     Object(Object),
     Values(Vec<ActorTypeValues>),
 }
 
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Debug, PartialEq)]
 pub enum ActorTypeValues {
     Url(Url),
     Object(Object),
