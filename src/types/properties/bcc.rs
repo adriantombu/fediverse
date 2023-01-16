@@ -4,7 +4,7 @@ use url::Url;
 /// Identifies one or more Objects that are part of the private secondary audience of this Object.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-bcc>
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Default, Debug, PartialEq, Eq)]
 pub struct Bcc(Vec<Url>);
 
 impl Bcc {

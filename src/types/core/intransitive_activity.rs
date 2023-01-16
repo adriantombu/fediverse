@@ -10,7 +10,7 @@ use crate::types::properties::target::Target;
 /// activities.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-intransitiveactivity>
-#[derive(Debug, PartialEq)]
+#[derive(Default, Debug, PartialEq)]
 pub struct IntransitiveActivity {
     pub r#type: IntransitiveActivityType,
     pub intransitive_activity_properties: IntransitiveActivityProperties,
@@ -28,7 +28,7 @@ impl IntransitiveActivity {
     }
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Default, Debug, PartialEq)]
 pub struct IntransitiveActivityProperties {
     pub actor: Option<Actor>,
     pub object: Option<Object>,
@@ -38,7 +38,7 @@ pub struct IntransitiveActivityProperties {
     pub instrument: Option<Instrument>,
 }
 
-#[derive(Debug, PartialEq, Eq)]
+#[derive(Default, Debug, PartialEq, Eq)]
 pub enum IntransitiveActivityType {
     /// An [IntransitiveActivity](crate::types::core::intransitive_activity::IntransitiveActivity) that
     /// indicates that the `actor` has arrived at the `location`
@@ -47,6 +47,7 @@ pub enum IntransitiveActivityType {
     /// typically has no defined meaning.
     ///
     /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-arrive>
+    #[default]
     Arrive,
 
     /// Represents a question being asked.

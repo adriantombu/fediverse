@@ -12,6 +12,7 @@ documentation = "https://docs.rs/fediverse"
 include = ["/src", "LICENSE.md", "README.md"]
 
 [dependencies]
+chrono = "0.4"
 thiserror = "1"
 url = "2.3"
 voca_rs = "1.15"

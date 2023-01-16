@@ -18,5 +18,5 @@ impl Image {
 #[derive(Debug, PartialEq)]
 pub enum ImageType {
     Image(Document), // TODO: Document of type DocumentType::Image?
-    Link(Link),
+    Link(Box<Link>),
 }

@@ -8,11 +8,27 @@ use crate::types::properties::start_index::StartIndex;
 /// for a complete description of the `OrderedCollectionPage` object.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-orderedcollectionpage>
-#[derive(Debug, PartialEq)]
+#[derive(Default, Debug, PartialEq)]
 pub struct OrderedCollectionPage {
     pub object_properties: ObjectProperties,
     pub collection_properties: CollectionProperties,
     pub collection_page_properties: CollectionPageProperties,
 
     pub start_index: Option<StartIndex>,
+}
+
+impl OrderedCollectionPage {
+    pub fn new(
+        object_properties: ObjectProperties,
+        collection_properties: CollectionProperties,
+        collection_page_properties: CollectionPageProperties,
+        start_index: Option<StartIndex>,
+    ) -> Self {
+        Self {
+            object_properties,
+            collection_properties,
+            collection_page_properties,
+            start_index,
+        }
+    }
 }

@@ -34,7 +34,6 @@ use crate::types::properties::url::Url;
 #[derive(Default, Debug, PartialEq)]
 pub struct Object {
     pub r#type: String,
-
     pub object_properties: ObjectProperties,
 }
 

@@ -6,7 +6,7 @@ use url::Url;
 /// might not be Actors. For instance, an object might be attributed to the completion of another activity.
 ///
 /// Specifications: <https://www.w3.org/TR/activitystreams-vocabulary/#dfn-attributedto>
-#[derive(Debug, PartialEq)]
+#[derive(Default, Debug, PartialEq)]
 pub struct AttributedTo(Vec<AttributedToType>);
 
 impl AttributedTo {
